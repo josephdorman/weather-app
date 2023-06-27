@@ -8,6 +8,7 @@ const api = (() => {
       const info = await data.json();
 
       console.log(info);
+      dom.setWeatherInfo(info.location.name, info.current.condition.text, info.current.temp_f);
 
     } catch (error) {
       console.log(error);
