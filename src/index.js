@@ -1,3 +1,3 @@
-import api from "./api";
+import handlers from "./handlers";
 
-api.getWeatherData();
+handlers.searchClickHandler();

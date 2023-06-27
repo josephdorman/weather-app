@@ -16,7 +16,17 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst api = (() => {\n\n  async function getWeatherData () {\n    try {\n      const data =  await fetch('https://api.weatherapi.com/v1/current.json?key=8fbe15dd00be48a2b24214508232406&q=london', {mode: 'cors'});\n      const test = await data.json();\n\n      console.log(test);\n\n    } catch (error) {\n      console.log(error);\n    }\n  }\n\n  return {getWeatherData}\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (api);\n\n\n\n\n\n\n\n//# sourceURL=webpack://weather-app/./src/api.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst api = (() => {\n\n  async function getWeatherData (location = 'london') {\n    try {\n      const data =  await fetch(`https://api.weatherapi.com/v1/current.json?key=8fbe15dd00be48a2b24214508232406&q=${location}`, {mode: 'cors'});\n      const test = await data.json();\n\n      console.log(test);\n\n    } catch (error) {\n      console.log(error);\n    }\n  }\n\n  return {getWeatherData}\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (api);\n\n\n\n\n\n\n\n//# sourceURL=webpack://weather-app/./src/api.js?");
+
+/***/ }),
+
+/***/ "./src/handlers.js":
+/*!*************************!*\
+  !*** ./src/handlers.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n\n\nconst handlers = (() => {\n  const searchBtn = document.getElementById('search-btn');\n\n  function searchClickHandler (value) {\n    _api__WEBPACK_IMPORTED_MODULE_0__[\"default\"].getWeatherData(value);\n  }\n\n  searchBtn.addEventListener('click', () => {\n    const searchField = document.getElementById('search');\n    searchClickHandler(searchField.value);\n  });\n\n  return {searchClickHandler};\n\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (handlers);\n\n//# sourceURL=webpack://weather-app/./src/handlers.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api */ \"./src/api.js\");\n\n\n_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"].getWeatherData();\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _handlers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handlers */ \"./src/handlers.js\");\n\n\n_handlers__WEBPACK_IMPORTED_MODULE_0__[\"default\"].searchClickHandler();\n\n//# sourceURL=webpack://weather-app/./src/index.js?");
 
 /***/ })
 
