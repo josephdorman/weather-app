@@ -4,11 +4,15 @@
 }
 
 body {
+  background-image: url(./images/minimalist-dark-4k-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   gap: 50px;
   height: 100vh;
-  background-color: #1481BA;
+  background-color: rgb(22,55,73);
   justify-content: center;
   align-items: center;
 }
