@@ -4,15 +4,30 @@ const dom = (() => {
   const temp = document.querySelector('.temp');
   const icon = document.querySelector('.icon');
 
-  function setWeatherInfo (locationV, conditionV, tempV, iconV) {
+  let tempC = '';
+  let tempF = '';
+
+  function setWeatherInfo (locationV, conditionV, tempCel, tempFah, iconV) {
     location.textContent = locationV;
     condition.textContent = conditionV;
     icon.src = iconV;
-    temp.textContent = Math.round(tempV);
+    tempC = Math.round(tempCel);
+    tempF = Math.round(tempFah);
+    temp.textContent = tempF;
     
   }
 
-  return {setWeatherInfo}
+  function tempatureToggle (value) {
+    if (value === 'fah') {
+      temp.textContent = tempF;
+    }
+    else if (value === 'cel') {
+      temp.textContent = tempC;
+    }
+    
+  }
+
+  return {setWeatherInfo, tempatureToggle}
 
 })();
 
