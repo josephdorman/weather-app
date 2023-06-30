@@ -64,7 +64,9 @@ body {
   align-self: center;
 }
 
-#search-btn:hover {
+#search-btn:hover,
+#cel:hover,
+#fah:hover {
   transform: scale(1.1);
 }
 
@@ -95,5 +97,35 @@ body {
 }
 
 .temp {
+  display: flex;
   font-size: 124px;
+}
+
+.temp::after {
+  content: '\00B0';
+  font-size: 45px;
+}
+
+.temp-info {
+  display: flex;
+  gap: 10px;
+}
+
+.temp-toggle {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.temp-toggle button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+
+.border {
+  border: 1px solid white;
 }
