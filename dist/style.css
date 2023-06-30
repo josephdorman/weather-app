@@ -10,28 +10,43 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  gap: 50px;
   height: 100vh;
+  padding: 10px;
   background-color: rgb(22,55,73);
-  justify-content: center;
-  align-items: center;
 }
 
 .search-bar {
   display: flex;
-  flex-direction: column;
+  justify-content: end;
   gap: 10px;
+  height: 40px;
 }
 
 #search {
   padding: 6px;
   font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+#search:focus {
+  border-bottom: 1px solid grey;
 }
 
 #search-btn {
-  width: 180px;
+  background-image: url(./images/magnify.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 30px;
   height: 30px;
   align-self: center;
+}
+
+#search-btn:hover {
+  transform: scale(1.1);
 }
 
 .weather-info {
