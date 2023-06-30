@@ -12,7 +12,26 @@ body {
   flex-direction: column;
   height: 100vh;
   padding: 10px;
+  gap: 100px;
   background-color: rgb(22,55,73);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 30px;
+}
+
+#location-icon {
+  height: 30px;
+  width: 30px;
 }
 
 .search-bar {
@@ -51,10 +70,30 @@ body {
 
 .weather-info {
   display: flex;
+  align-self: center;
+  height: 600px;
+  width: 500px;
   flex-direction: column;
   gap: 10px;
-  font-size: 24px;
-  font-weight: bold;
   color: white;
   align-items: center;
+}
+
+.weather-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weather {
+  font-size: 34px;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.temp {
+  font-size: 124px;
 }

@@ -8,7 +8,7 @@ const dom = (() => {
     location.textContent = locationV;
     condition.textContent = conditionV;
     icon.src = iconV;
-    temp.textContent = `${tempV} F`;
+    temp.textContent = Math.round(tempV);
     
   }
 
